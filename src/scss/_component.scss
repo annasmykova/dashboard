@@ -1,0 +1,188 @@
+// title
+%title{
+  color: $titleColor;
+  font-size: $titleFontSize;
+  font-weight:$fontMedium;
+}
+.page-title{
+  @extend  %title;
+  text-transform: uppercase;
+}
+.section-title{
+  @extend %title;
+}
+
+//header
+#header{
+  width: 100%;
+  border-bottom: 1px solid $lightGrey;
+  background-color: $headerBg;
+
+  .user-control{
+    padding: 18px;
+    border-left:1px solid $lightGrey;
+    font-weight:$fontRegular;
+    font-size: 20px;
+    color: $darkGrey;
+
+    &:hover{
+      background-color: $xsLightGrey;
+    }
+
+    span{
+      margin: 0 20px 0 15px;
+    }
+
+    .icon-arrow-down{
+      font-size: 12px;
+    }
+    .icon-notification{
+      position: relative;
+      font-size: 16px;
+    }
+    .new-notification{
+      @extend %badge;
+
+      width: 9px;
+      height: 9px;
+      right: -1px;
+      top: -5px;
+      background-color: $orange;
+    }
+    .user-auth-name{
+      color: $blue;
+      font-weight: $fontLight;
+      font-size: 13px;
+      margin: 0 0 0 13px;
+    }
+    .icon-profile{
+      font-size: 16px;
+    }
+  }
+}
+
+//badges
+%badge{
+  position: absolute;
+  border-radius: 50%;
+  margin: 0;
+}
+
+//aside
+%activeLink{
+  border-left-color: $orange;
+  background-color: $activeLinkBg;
+  color: $activeLinkColor;
+}
+
+#aside{
+  background-color: $asideBg;
+  width:$asideWidth;
+  height:100vh;
+  left: 0;
+  z-index: 100;
+
+  .menu-control{
+    padding: 18px;
+
+    .menu-btn{
+      cursor: pointer;
+
+      span{
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: $darkGrey;
+
+        & + span{
+          margin-top: 5px;
+        }
+      }
+    }
+
+  }
+
+  .aside-menu{
+    padding-bottom: 35px;
+    border-bottom: 1px solid $black;
+    ul{
+      li{
+        color: $darkGrey ;
+
+        &.active{
+          a{
+            @extend %activeLink;
+          }
+        }
+
+        a{
+          display: block;
+          padding: 14px;
+          border-left:4px solid transparent;
+
+          [class*='icon-']{
+            font-size: 17px;
+            margin-right: 15px;
+          }
+
+          &:hover{
+            @extend  %activeLink;
+          }
+        }
+      }
+    }
+  }
+  .your-manager{
+    padding: 25px 20px;
+    
+    .mngr-title{
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #808080;
+      font-weight:$fontMedium;
+    }
+    .manager-info{
+      margin-top: 18px;
+
+      .mngr-photo{
+        width: 45px;
+        height: 45px;
+        position: relative;
+        img{
+          border-radius: 50%;
+        }
+        .online{
+          @extend %badge;
+          width: 12px;
+          height: 12px;
+          background-color: $green;
+          top: 0;
+          right: 0;
+        }
+      }
+      .mngr-name{
+        display: inline-block;
+        margin-left: 10px;
+        font-weight: $fontLight;
+        color: $blue;
+      }
+    }
+  }
+}
+
+//content
+.content-wrapper{
+  padding: 18px;
+  height: calc(100vh - 62px);
+  overflow-y: auto;
+}
+
+.card{
+  background-color: $cardBg;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  .card-header{
+    border-bottom: 1px solid $lightGrey;
+    padding: 18px;
+  }
+}

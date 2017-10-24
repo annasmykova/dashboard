@@ -7,12 +7,131 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Template</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-<h1>Hello, world!</h1>
+<!--Header start-->
+<header id="header" class="fixed-to-top">
+    <div class="flex-container justify-end align-center">
+        <div class="user-control">
+            <i class="icon-wallet"></i>
+            <span>$1,500,00</span>
+            <i class="icon-arrow-down"></i>
+        </div>
+        <div class="user-control">
+            <a href="">
+                <i class="icon-notification">
+                    <span class="new-notification"></span>
+                </i>
+            </a>
+        </div>
+        <div class="user-control">
+            <a href="">
+                <i class="icon-profile"></i>
+                <span class="user-auth-name">Leonardo Dicaprio</span>
+            </a>
+        </div>
+        <div class="user-control">
+            <a href="">
+                <i class="icon-quit"></i>
+            </a>
+        </div>
+    </div>
+</header>
 
+<!--Aside start-->
+<aside id="aside" class="fixed-to-top">
+    <div class="menu-control flex-container justify-sb align-center">
+        <div class="logo">
+            <a href=""><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!--menu aside-->
+    <div class="aside-menu">
+        <ul>
+            <li class="active">
+                <a href="">
+                    <i class="icon-general"></i>
+                    <span>General</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-details"></i>
+                    <span>Details</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-links"></i>
+                    <span>Links</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-banners"></i>
+                    <span>Banners</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-personaldata"></i>
+                    <span>Personal data</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-payout"></i>
+                    <span>Payout</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-postback"></i>
+                    <span>Postback</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--your manager-->
+    <div class="your-manager">
+        <div class="mngr-title">
+            <span>Your manager</span>
+        </div>
+        <div class="manager-info flex-container align-center">
+            <div class="mngr-photo">
+                <a href=""><img src="img/manager-photo.png" alt=""></a>
+                <div class="online"></div>
+            </div>
+            <div class="mngr-name">
+                <a href="">
+                    <span>Mikhael E.</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--Aside end-->
+<main id="main">
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-header">
+                <span class="page-title">General statistic</span>
+            </div>
+            <div class="card-body"></div>
+        </div>
+    </div>
+</main>
+<!--Header end-->
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

@@ -186,3 +186,92 @@
     padding: 18px;
   }
 }
+
+//form-control
+%form-control {
+  outline: none;
+  display: block;
+  margin-top: 15px;
+  font-weight: $fontLight;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: $black;
+  font-size: 14px;
+  width: 155px;
+  &[type="text"] {
+    padding: 15px 15px 10px 15px;
+  }
+  &[type="password"] {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+  }
+}
+.password-group{
+  position: relative;
+  width: 155px;
+
+  label{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 18px;
+    color: $black;
+
+    &[for="disabled-password"]{
+      color: #a6a6a6;
+    }
+  }
+}
+textarea{
+  padding: 18px;
+  font-size: 12px;
+}
+
+
+.default{
+  @extend  %form-control;
+  border-color: $lightGrey;
+  &:hover, &:focus{
+    border-color: #b1b1b1;
+  }
+  
+}
+.disabled{
+  @extend %form-control;
+  border-color: #efefef;
+  &::placeholder{
+    color: #a6a6a6;
+  }
+}
+.wrong-password{
+  @extend %form-control;
+  border-color: $red;
+}
+
+//button
+%btn{
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px 15px;
+  border-radius:3px;
+  font-weight:$fontLight;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn-default{
+  @extend %btn;
+  background-color: $darkGrey;
+  
+  &:hover{
+    background-color: $grey;
+  }
+}
+.btn-action{
+  @extend %btn;
+  background-color: $orange;
+
+  &:hover{
+    background-color: $orangeLight;
+  }
+}

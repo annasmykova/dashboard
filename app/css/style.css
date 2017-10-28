@@ -216,6 +216,26 @@ button {
   top: 0;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-orange {
+  color: #f58220;
+}
+
+.text-grey {
+  color: #bababa;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.full-width {
+  width: 100%;
+}
+
 .page-title, .section-title {
   color: #a6a6a6;
   font-size: 16px;
@@ -233,15 +253,34 @@ button {
 }
 
 #header .user-control {
+  position: relative;
   padding: 18px;
   border-left: 1px solid #e3e3e3;
   font-weight: 400;
   font-size: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #979797;
 }
 
 #header .user-control:hover {
   background-color: #f5f5f5;
+}
+
+#header .user-control.open {
+  background-color: #f5f5f5;
+}
+
+#header .user-control.open .icon-arrow-down {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 #header .user-control span {
@@ -250,6 +289,7 @@ button {
 
 #header .user-control .icon-arrow-down {
   font-size: 12px;
+  line-height: 0;
 }
 
 #header .user-control .icon-notification {
@@ -266,14 +306,22 @@ button {
 }
 
 #header .user-control .user-auth-name {
-  color: #56819f;
-  font-weight: 300;
-  font-size: 13px;
   margin: 0 0 0 13px;
 }
 
 #header .user-control .icon-profile {
   font-size: 16px;
+  line-height: 0;
+}
+
+.ref {
+  color: #56819f;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.ref:hover {
+  color: #f58220;
 }
 
 #header .user-control .new-notification, #aside .your-manager .manager-info .mngr-photo .online {
@@ -395,10 +443,46 @@ button {
   padding: 18px;
 }
 
+.card .card-date {
+  padding: 30px 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.card .datepicker-form .date-input-wrap {
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  padding: 3px 0;
+  display: inline-block;
+  color: #333;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.card .datepicker-form .date-input-wrap input {
+  padding: 8px 16px;
+}
+
+.card .datepicker-form .date-input-wrap input#to {
+  border-left: 1px solid #e3e3e3;
+}
+
+.card .datepicker-form .date-input-wrap label {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+  padding: 0 15px;
+  color: #bababa;
+}
+
+.card .datepicker-form .btn {
+  vertical-align: middle;
+  line-height: 0;
+  padding: 11px 15px;
+}
+
 .default, .disabled, .wrong-password {
   outline: none;
-  display: block;
-  margin-top: 15px;
   font-weight: 300;
   border: 1px solid transparent;
   -webkit-border-radius: 3px;
@@ -436,11 +520,11 @@ button {
 
 textarea {
   padding: 18px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .default {
-  border-color: #e3e3e3;
+  border-color: #efefef;
 }
 
 .default:hover, .default:focus {
@@ -452,32 +536,39 @@ textarea {
 }
 
 .disabled::-webkit-input-placeholder {
-  color: #a6a6a6;
+  color: #b1b1b1;
 }
 
 .disabled::-moz-placeholder {
-  color: #a6a6a6;
+  color: #b1b1b1;
 }
 
 .disabled:-ms-input-placeholder {
-  color: #a6a6a6;
+  color: #b1b1b1;
 }
 
 .disabled::-ms-input-placeholder {
-  color: #a6a6a6;
+  color: #b1b1b1;
 }
 
 .disabled::placeholder {
-  color: #a6a6a6;
+  color: #b1b1b1;
 }
 
 .wrong-password {
   border-color: #ff0000;
 }
 
-.btn-default, .btn-action {
+.container {
+  margin: 0 auto;
+}
+
+.container.sm {
+  max-width: 684px;
+}
+
+.btn {
   display: inline-block;
-  margin-left: 10px;
   padding: 10px 15px;
   -webkit-border-radius: 3px;
           border-radius: 3px;
@@ -500,6 +591,51 @@ textarea {
 
 .btn-action:hover {
   background-color: #ffa200;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f5f5f5;
+  padding: 10px 18px 24px;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.table {
+  font-size: 13px;
+  border-collapse: collapse;
+}
+
+.table tbody tr {
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table tbody tr:hover .hide-icons {
+  opacity: 1;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.table td {
+  padding: 18px;
+  border-top: 1px solid #e3e3e3;
+}
+
+.table td .hide-icons {
+  opacity: 0;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
 }
 
 #main {

@@ -324,7 +324,7 @@
   }
   .card-form{
     .select-group{
-      padding: 18px;
+      padding: 30px 18px;
     }
     .input-group{
       label{
@@ -385,11 +385,11 @@
   color: $formColor;
   font-size: $formFontSize;
   &[type="text"] {
-    padding: 15px 15px 10px 15px;
+    padding: 12px 15px 10px 15px;
   }
   &[type="password"] {
     width: $passwordWidth;
-    padding: 15px 15px 15px 50px;
+    padding: 12px 15px 15px 50px;
   }
 }
 .password-group{
@@ -415,10 +415,12 @@ textarea{
 .default{
   @extend  %form-control;
   border-color: $formDefaultBorderColor;
+  &::placeholder{
+    color: $formPlaceholderColor;
+  }
   &:hover, &:focus{
     border-color: $formDefaultBorderColorHover;
   }
-  
 }
 .disabled{
   @extend %form-control;
@@ -431,7 +433,6 @@ textarea{
   @extend %form-control;
   border-color: $passwordWrongBorderColor;
 }
-
 
 //container
 .container{
@@ -464,6 +465,98 @@ textarea{
     background-color: $btnActionBgHover;
   }
 }
+.btn-disabled{
+  background-color: $btnDisabledBg;
+  cursor: not-allowed;
+}
+
+//checkbox
+input[type="checkbox"]{
+  display: none;
+
+  & + label{
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+
+    &::before{
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border:1px solid $lightGrey;
+      background-color: #fff;
+      margin-right: 16px;
+    }
+  }
+  &:checked + label{
+    &::before{
+      background: $green url('../img/checkbox-bg.png') no-repeat center;
+    }
+  }
+}
+
+//checkbox-wrap
+.form-inner-checkbox{
+  display: flex;
+  .checkbox-wrap {
+    flex-grow: 1;
+    .checkboxes {
+      .checkbox-group {
+        flex-grow: 1;
+        flex-basis: 94%;
+        margin-right: 6%;
+      }
+    }
+    & + .checkbox-wrap{
+      border-left: 1px solid $lightGrey;
+    }
+  }
+}
+
+.checkbox-wrap{
+  flex-grow: 1;
+  padding: 30px 18px 20px;
+  .scroll-wrapper{
+    margin-top: 30px;
+  }
+  .checkboxes{
+    padding: 0 0 30px 0;
+    height: 350px;
+
+    .checkbox-group{
+      flex-grow: 1;
+      flex-basis: 32%;
+      padding: 12px 30px 12px 12px;
+
+      &:nth-child(3n){
+        margin-right: 3%;
+      }
+      .ref{
+        line-height: 0;
+
+        i{
+          opacity: 0;
+          transition: all .2s linear;
+        }
+      }
+
+
+
+      &:hover{
+        background-color: $xsLightGrey;
+        .ref{
+          i{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 //links{
 .links{
@@ -597,25 +690,79 @@ textarea{
     }
   }
 }
+
+
 .modal{
   background-color: $modalBg;
   display: none;
 
-  &#links{
+  &#links, &#banners{
     width: 70%;
     max-width:  1075px;
     min-height: 100px;
     .card{
+      .card-header{
+        .close{
+          color: $modalCloseColor;
+          font-size: $modalCloseFontSize;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
       .card-body{
         .card-form{
           .select-group{
+            & + .select-group{
+              padding: 0 18px 30px;
+            }
             .input-group{
-              width: 415px;
+              flex-grow: 1;
               label{
                 margin-bottom: 17px;
               }
-              &:last-child{
-                width: 135px;
+              .jq-selectbox{
+                .jq-selectbox__select{
+                  .jq-selectbox__trigger{
+                    color: $grey;
+                    font-size: 8px;
+                    line-height: 0;
+                  }
+                }
+                li.selected{
+                  background-color: $lightGrey;
+                  &.disabled{
+                    background-color: #fff;
+                  }
+                }
+              }
+
+              &.lang{
+                max-width: 135px;
+
+                .jq-selectbox{
+                  &.focused, &.opened{
+                      border-color: transparent;
+                  }
+                  li[disabled]{
+                    color: $formPlaceholderColor;
+                  }
+
+                  .jq-selectbox__select, li{
+                      padding: 10px 15px 10px 55px;
+
+                  }
+                }
+                .jq-selectbox__dropdown{
+                  .usa{
+                    &:hover, &.selected{
+                      background-color: $lightGrey;
+                    }
+                  }
+                }
+                .usa{
+                    background: url('../img/lang.png') no-repeat 15px 10px;
+                }
               }
               & + .input-group{
                 margin-left: 20px;
@@ -624,6 +771,20 @@ textarea{
           }
         }
       }
+    }
+  }
+}
+.generate-links{
+  padding: 20px 18px;
+  input[type="text"]{
+    flex-grow: 1;
+  }
+  .btn{
+    margin-left: 15px;
+    i{
+      line-height: 0;
+      vertical-align: middle;
+      margin-right: 15px;
     }
   }
 }

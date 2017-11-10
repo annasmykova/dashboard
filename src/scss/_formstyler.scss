@@ -306,9 +306,10 @@
 }
 .jq-selectbox__select {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   @extend %form-control;
-  padding: 15px 15px 10px 15px;
+  padding: 12px 15px 8px 15px;
 }
 .jq-selectbox__select:active {
 }
@@ -351,7 +352,6 @@
   border: 1px solid #CCC;
   border-radius: 4px;
   background: #FFF;
-  font: 14px/18px Arial, sans-serif;
 }
 .jq-selectbox__search {
   margin: 5px;

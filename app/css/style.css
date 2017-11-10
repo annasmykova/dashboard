@@ -1953,6 +1953,7 @@ input[type='submit'].styler[disabled] {
 }
 
 #header .user-control {
+  height: 62px;
   position: relative;
   padding: 18px;
   border-left: 1px solid #e3e3e3;
@@ -1969,11 +1970,16 @@ input[type='submit'].styler[disabled] {
   color: #979797;
 }
 
+#header .user-control > a {
+  line-height: 0;
+}
+
 #header .user-control:hover {
   background-color: #f5f5f5;
 }
 
 #header .user-control.open {
+  color: #333;
   background-color: #f5f5f5;
 }
 
@@ -2015,14 +2021,14 @@ input[type='submit'].styler[disabled] {
 #header .user-control .dropdown-menu {
   display: none;
   position: absolute;
+  z-index: -1;
   background-color: #f5f5f5;
-  padding: 10px 18px 24px;
-  margin: 0 -1px;
-  top: 100%;
-  left: 0;
-  right: 0;
-  border: 1px solid #e3e3e3;
-  border-top-color: transparent;
+  padding: 70px 18px 24px;
+  top: 0;
+  left: -1px;
+  right: -1px;
+  -webkit-box-shadow: 0px 0px 10px;
+          box-shadow: 0px 0px 10px;
 }
 
 #header .user-control .dropdown-menu ul li + li {
@@ -2095,6 +2101,10 @@ input[type='submit'].styler[disabled] {
 
 #aside .menu-control .menu-btn {
   cursor: pointer;
+}
+
+#aside .menu-control .menu-btn:hover span {
+  background-color: #bababa;
 }
 
 #aside .menu-control .menu-btn span {
@@ -2737,6 +2747,39 @@ input[type="checkbox"]:checked + label::before {
   margin-right: 15px;
 }
 
+.personal-data .personal-input-group {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 45px 0;
+}
+
+.personal-data .personal-input-group .input-group {
+  width: 445px;
+}
+
+.personal-data .personal-input-group .input-group input {
+  width: 310px;
+}
+
+.personal-data .personal-input-group .input-group input[type="password"] {
+  padding: 12px 15px 10px 15px;
+}
+
+.personal-data .personal-input-group .input-group + .input-group {
+  margin-top: 15px;
+}
+
+.personal-data .btn-row {
+  padding: 35px 0;
+}
+
+.personal-data .btn-row .btn {
+  padding: 10px 30px;
+}
+
 #main {
   padding-left: 188px;
   padding-top: 62px;
@@ -2755,23 +2798,24 @@ input[type="checkbox"]:checked + label::before {
 }
 
 ._mobileSlider #aside .menu-control {
+  padding: 23px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-._mobileSlider #aside .aside-menu li {
+._mobileSlider .aside-menu li {
   position: relative;
   text-align: center;
 }
 
-._mobileSlider #aside .aside-menu li a i {
+._mobileSlider .aside-menu li a i {
   margin-right: 0;
   margin-left: -4px;
 }
 
-._mobileSlider #aside .aside-menu li a span {
+._mobileSlider .aside-menu li a span {
   display: none;
   position: absolute;
   background-color: #282828;
@@ -2781,7 +2825,7 @@ input[type="checkbox"]:checked + label::before {
   min-width: 150px;
 }
 
-._mobileSlider #aside .aside-menu li:hover a span {
+._mobileSlider .aside-menu li:hover a span {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2793,7 +2837,8 @@ input[type="checkbox"]:checked + label::before {
   padding-left: 20px;
 }
 
-._mobileSlider #aside .your-manager {
+._mobileSlider .your-manager {
+  text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2804,21 +2849,23 @@ input[type="checkbox"]:checked + label::before {
           justify-content: center;
 }
 
-._mobileSlider #aside .your-manager .mngr-title {
+._mobileSlider .your-manager .mngr-title {
   display: none;
 }
 
-._mobileSlider #aside .your-manager .mngr-name {
+._mobileSlider .your-manager .mngr-name {
   display: none;
 }
 
-._mobileSlider #aside .your-manager .mngr-photo {
-  display: block;
-  padding: 0;
-}
-
-._mobileSlider #aside .your-manager .mngr-photo img {
+._mobileSlider .your-manager .mngr-photo {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+._mobileSlider .your-manager .mngr-photo img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }

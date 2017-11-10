@@ -66,7 +66,7 @@
     <!--menu aside-->
     <div class="aside-menu">
         <ul>
-            <li class="active">
+            <li>
                 <a href="index.html">
                     <i class="icon-general"></i>
                     <span>General</span>
@@ -90,7 +90,7 @@
                     <span>Banners</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="personal-data.html">
                     <i class="icon-personaldata"></i>
                     <span>Personal data</span>
@@ -134,27 +134,66 @@
     <div class="content-wrapper">
         <div class="card">
             <div class="card-header">
-                <span class="page-title">General statistic</span>
+                <span class="page-title">Personal data</span>
             </div>
             <!--card title end-->
-            <div class="card-date text-center">
-                <form class="datepicker-form">
-                    <div class="date-input-wrap default">
-                        <input type="text" name="from" id="from"  >
-                        <input type="text" name="to" id="to" >
-                        <label for="from">
-                            <i class="icon-calendar"></i>
-                        </label>
+            <div class="card-body ">
+                <form class="personal-data">
+                    <div class="personal-input-group bd-bottom flex-container align-center">
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="name">Name</label>
+                            <input type="text" class="default" id="name">
+                        </div>
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="surname">Surname</label>
+                            <input type="text" class="default" id="surname">
+                        </div>
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="email">Email</label>
+                            <input type="text" class="default" id="email">
+                        </div>
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="phone">Phone</label>
+                            <input type="text" class="default" id="phone">
+                        </div>
                     </div>
-                    <button class="btn btn-action">
-                        <i class="icon-refresh"></i>
-                    </button>
+                    <div class="personal-input-group bd-bottom flex-container align-center">
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="skype">Skype</label>
+                            <input type="text" class="default" id="skype">
+                        </div>
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="icq">ICQ</label>
+                            <input type="text" class="default" id="icq">
+                        </div>
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="msn">Msn</label>
+                            <input type="text" class="default" id="msn">
+                        </div>
+                    </div>
+                    <div class="personal-input-group bd-bottom flex-container align-center">
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="wallet">Wallet</label>
+                            <input type="text" class="default" id="wallet">
+                        </div>
+                    </div>
+                    <div class="personal-input-group bd-bottom flex-container align-center">
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="password">Password</label>
+                            <input type="password" class="default" id="password">
+                        </div>
+                        <div class="input-group flex-container justify-sb align-center">
+                            <label class="section-title" for="repeat-pas">Repeat</label>
+                            <input type="password" class="default" id="repeat-pas">
+                        </div>
+                    </div>
+                    <div class="btn-row text-center">
+                        <button class="btn btn-action" type="submit">Send</button>
+                    </div>
                 </form>
+
             </div>
-            <div class="card-body">
-                <canvas id="myChart" width="600" height="400"></canvas>
-                <!--card body end-->
-            </div>
+            
         </div>
         <!--card end-->
     </div>

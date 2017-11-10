@@ -68,8 +68,8 @@ $( function() {
                         backgroundColor: 'rgba(255, 154, 56, 1)'
                     },
                     {
-                        label: 'FTD',
-                        data: [200 ,200 ,520, 200, 260, 450, 600, 440, 150],
+                        label: 'Earnings',
+                        data: [500 ,190 ,320, 200, 460, 450, 376, 242, 150],
                         backgroundColor: '#59b66d'
                     }
 

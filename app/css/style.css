@@ -2780,6 +2780,35 @@ input[type="checkbox"]:checked + label::before {
   padding: 10px 30px;
 }
 
+.statistic-wrap {
+  padding: 30px 0 55px;
+  text-align: center;
+}
+
+.statistic-wrap .statistic {
+  display: inline-block;
+  max-width: 690px;
+}
+
+.statistic-wrap .statistic .statistic-string-wrap .statistic-string {
+  padding: 10px 0;
+  -webkit-flex-basis: 310px;
+      -ms-flex-preferred-size: 310px;
+          flex-basis: 310px;
+  margin-top: 12px;
+}
+
+.statistic-wrap .statistic .canvas-wrap {
+  margin-top: 75px;
+  padding: 10px;
+}
+
+.statistic-wrap .statistic .canvas-wrap .section-title {
+  text-align: left;
+  margin-left: -10px;
+  margin-bottom: 30px;
+}
+
 #main {
   padding-left: 188px;
   padding-top: 62px;

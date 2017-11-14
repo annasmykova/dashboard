@@ -33,6 +33,9 @@
 .text-center{
   text-align: center;
 }
+.text-right{
+  text-align: right;
+}
 
 //text color
 .text-orange{
@@ -40,6 +43,10 @@
 }
 .text-grey{
   color: $grey;
+}
+.warning-text{
+  color: $red;
+  text-transform: uppercase;
 }
 
 //text weight

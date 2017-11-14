@@ -309,7 +309,7 @@
   align-items: center;
   justify-content: space-between;
   @extend %form-control;
-  padding: 12px 15px 8px 15px;
+  padding: 12px 15px 10px 15px;
 }
 .jq-selectbox__select:active {
 }
@@ -322,7 +322,7 @@
 }
 .jq-selectbox__select-text {
   display: block;
-  width: 100%;
+  width: 162px;
 }
 .jq-selectbox .placeholder {
   color: $formPlaceholderColor

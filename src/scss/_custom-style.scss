@@ -2,11 +2,21 @@
 #main{
   padding-left: $asideWidth;
   padding-top: 62px;
+  @media (max-width: 767px){
+    padding-left: $asideMobileWidth;
+  }
+  @media (max-width: 599px){
+    padding-top: 50px;
+    padding-left: 46px;
+  }
 }
 
 ._mobileSlider{
   #main{
     padding-left: $asideMobileWidth;
+    @media (max-width: 599px){
+      padding-left: 46px;
+    }
   }
 
   #aside {
@@ -20,6 +30,12 @@
       padding: 23px;
       justify-content: center;
       }
+    @media (max-width: 599px){
+      width: 46px;
+      .menu-control{
+        padding: 17px;
+      }
+    }
 
     .aside-menu {
       li {
@@ -40,6 +56,9 @@
             min-width: 150px;
 
           }
+          @media (max-width: 599px){
+            padding: 12px;
+          }
         }
         &:hover{
           a{
@@ -56,6 +75,7 @@
 
     }
     .your-manager {
+      padding: 0;
       text-align: center;
       display: flex;
       justify-content: center;

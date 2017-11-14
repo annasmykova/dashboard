@@ -104,6 +104,7 @@
       line-height: 0;
     }
 
+
     //& > *{
     //  display: flex;
     //  align-self: center;
@@ -122,10 +123,11 @@
       }
     }
     span{
-      margin: 0 20px 0 15px;
+      margin-left: 15px;
     }
 
     .icon-arrow-down{
+      margin-left: 20px;
       font-size: 12px;
       line-height: 0;
     }
@@ -154,7 +156,6 @@
       position: absolute;
       z-index: -1;
       background-color: #f5f5f5;
-      padding: 70px 18px 24px;
       top: 0;
       left: -1px;
       right: -1px;
@@ -184,6 +185,30 @@
           }
         }
       }
+    }
+    @media (max-width: 599px){
+      height: 50px;
+      font-size: 16px;
+      padding: 14px;
+      .dropdown-menu{
+        padding: 60px 14px 24px;
+      }
+    }
+    @media (max-width: 479px){
+      font-size: 14px;
+      .icon-arrow-down {
+        margin-left: 15px;
+      }
+      .dropdown-menu{
+        padding: 60px 14px 24px;
+      }
+      span{
+        margin-left: 10px;
+      }
+      .user-auth-name{
+        display: none;
+      }
+
     }
   }
 }
@@ -243,6 +268,9 @@
         }
       }
     }
+    @media (max-width: 599px){
+      padding: 12px 17px;
+    }
 
   }
 
@@ -272,13 +300,25 @@
           &:hover{
             @extend  %activeLink;
           }
+          @media (max-width: 599px){
+            padding: 12px;
+            [class*='icon-']{
+              font-size: 17px;
+              margin-right: 12px;
+            }
+          }
         }
       }
+    }
+    @media (max-width: 599px){
+      padding-bottom: 15px;
     }
   }
   .your-manager{
     padding: 25px 20px;
-    
+    @media (max-width: 599px){
+      padding: 12px 17px;
+    }
     .mngr-title{
       text-transform: uppercase;
       font-size: 14px;
@@ -347,7 +387,7 @@
     }
   }
   .datepicker-form{
-
+    padding: 0 18px;
     .date-input-wrap{
       padding:3px 0;
       display: inline-block;
@@ -362,6 +402,9 @@
       input{
         padding: 8px 16px;
 
+        &:first-child{
+          float: left;
+        }
         &#to{
           border-left:1px solid $lightGrey;
         }
@@ -383,6 +426,26 @@
       vertical-align: middle;
       line-height: 0;
       padding: 11px 15px;
+    }
+    @media (max-width: 630px) {
+      width:100%;
+      .date-input-wrap{
+        width: 100%;
+        input{
+          @media (max-width: 479px){
+            padding: 8px 8px;
+            font-size: 12px;
+          }
+          width: 42%;
+        }
+        label{
+          padding: 0;
+        }
+      }
+      .btn{
+        width: 100%;
+        margin-top: 18px;
+      }
     }
   }
 }
@@ -420,7 +483,8 @@
   }
 }
 textarea{
-  padding: 18px;
+  display: block;
+  padding: 15px 18px;
   font-size: $titleFontSize;
 }
 .default{
@@ -515,7 +579,7 @@ input[type="checkbox"]{
   .checkbox-wrap {
     flex-grow: 1;
     .checkboxes {
-      .checkbox-group {
+      .checkbox-group, .checkbox-group:nth-child(3n) {
         flex-grow: 1;
         flex-basis: 94%;
         margin-right: 6%;
@@ -729,11 +793,13 @@ input[type="checkbox"]{
             }
             .input-group{
               flex-grow: 1;
+
               label{
                 margin-bottom: 17px;
               }
               .jq-selectbox{
                 .jq-selectbox__select{
+                  margin: -1px;
                   .jq-selectbox__trigger{
                     color: $grey;
                     font-size: 8px;
@@ -760,7 +826,7 @@ input[type="checkbox"]{
                   }
 
                   .jq-selectbox__select, li{
-                      padding: 10px 15px 10px 55px;
+                      padding: 11px 15px 11px 55px;
 
                   }
                 }
@@ -804,7 +870,7 @@ input[type="checkbox"]{
 .personal-data{
   .personal-input-group{
     flex-direction: column;
-    padding: 45px 0;
+    padding: 45px 18px;
 
     .input-group{
       width: 445px;
@@ -820,16 +886,32 @@ input[type="checkbox"]{
         margin-top: 15px;
       }
     }
+    @media (max-width: 599px){
+      padding: 30px 18px;
+      .input-group{
+        width: 100%;
+        input{
+          margin-top: 18px;
+          width: 100%;
+        }
+      }
+    }
   }
   .btn-row{
     padding: 35px 0;
     .btn{
       padding: 10px 30px;
     }
+    @media (max-width: 599px){
+      padding: 20px 18px;
+      .btn{
+        width: 100%;
+      }
+    }
   }
 }
 .statistic-wrap{
-  padding: 30px 0 55px;
+  padding: 30px 18px 55px;
   text-align: center;
   .statistic{
     display: inline-block;
@@ -839,17 +921,117 @@ input[type="checkbox"]{
         padding: 10px 0;
         flex-basis: 310px;
         margin-top: 12px;
+
       }
+      @media (max-width: 767px) {
+        justify-content: center;
+      }
+
     }
     .canvas-wrap{
-      margin-top: 75px;
-      padding: 10px;
-      .section-title{
-        text-align: left;
-        margin-left: -10px;
-        margin-bottom: 30px;
+       margin-top: 75px;
+       padding: 10px;
+
+       canvas#myChart.chartjs-render-monitor{
+         width: 100% !important;
+       }
+       .section-title{
+         text-align: left;
+         margin-left: -10px;
+         margin-bottom: 30px;
+       }
+     }
+  }
+}
+.postback{
+  .general-parameters{
+    padding: 35px 18px;
+    .textarea-group-wrap{
+      .textarea-group{
+        width: 49%;
+
+        @media (max-width: 767px){
+          width: 100%;
+        }
+        label{
+          display: inline-block;
+          margin: 22px 0;
+        }
+
+        textarea{
+          height: 188px;
+          width: 100%;
+          &::placeholder{
+            line-height: 1.5;
+          }
+        }
+        & + .textarea-group{
+          margin-left: 2%;
+          @media (max-width: 767px) {
+            margin-left: 0;
+          }
+        }
+
       }
     }
+    .select-group{
+       padding: 0;
+       margin-top: 30px;
+       .input-group{
+         width: 32%;
+         label{
+           margin-bottom: 17px;
+         }
+         .jq-selectbox{
+           .jq-selectbox__select{
+             margin: -1px;
+             .jq-selectbox__trigger{
+               color: $grey;
+               font-size: 8px;
+               line-height: 0;
+             }
+           }
+           li.selected{
+             background-color: $lightGrey;
+             &.disabled{
+               background-color: #fff;
+             }
+           }
+         }
+         & + .input-group{
+           margin-left: 2%;
+         }
+         @media (max-width: 767px) {
+           width:49%;
+           &:last-child{
+             margin-left: 0;
+             width: 100%;
+             margin-top: 20px;
+           }
+         }
+         @media (max-width: 599px) {
+           width: 100%;
+           & + .input-group{
+             margin-left: 0;
+             margin-top: 20px;
+           }
+         }
+       }
+     }
   }
+  .scroll-n-range{
 
+    .checkbox-wrap{
+      width: 50%;
+    }
+    .range-wrap{
+      padding: 30px 18px 20px;
+      width: 50%;
+      border-left: 1px solid $lightGrey;
+    }
+
+  }
+  .btn-row{
+    padding: 20px 25px;
+  }
 }

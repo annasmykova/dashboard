@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Template</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!--Header start-->
+<header id="header" class="fixed-to-top">
+    <div class="flex-container justify-end align-center">
+        <div class="user-control dropdown-wrap">
+            <i class="icon-wallet"></i>
+            <span>$1,500,00</span>
+            <i class="icon-arrow-down"></i>
+            <div class="dropdown-menu">
+                <ul>
+                    <li><a href="" class="dropdown"><span class="name-drop">CPA</span><span class="count-drop">$1000</span></a></li>
+                    <li><a href="" class="dropdown"><span class="name-drop">CPL</span><span class="count-drop">$1100</span></a></li>
+                    <li><a href="" class="dropdown"><span class="name-drop">Turnover</span><span class="count-drop">$1030</span></a></li>
+                    <li><a href="" class="dropdown"><span class="name-drop">Net deposit</span><span class="count-drop">$1000</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="user-control">
+            <a href="">
+                <i class="icon-notification">
+                    <span class="new-notification"></span>
+                </i>
+            </a>
+        </div>
+        <div class="user-control">
+            <a href="">
+                <i class="icon-profile"></i>
+                <span class="user-auth-name ref">Leonardo Dicaprio</span>
+            </a>
+        </div>
+        <div class="user-control">
+            <a href="">
+                <i class="icon-quit"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!--Aside start-->
+<aside id="aside" class="fixed-to-top">
+    <div class="menu-control flex-container justify-sb align-center">
+        <div class="logo">
+            <a href=""><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!--menu aside-->
+    <div class="aside-menu">
+        <ul>
+            <li class="active">
+                <a href="index.html">
+                    <i class="icon-general"></i>
+                    <span>General</span>
+                </a>
+            </li>
+            <li>
+                <a href="details.html">
+                    <i class="icon-details"></i>
+                    <span>Details</span>
+                </a>
+            </li>
+            <li>
+                <a href="links.html">
+                    <i class="icon-links"></i>
+                    <span>Links</span>
+                </a>
+            </li>
+            <li>
+                <a href="banners.html">
+                    <i class="icon-banners"></i>
+                    <span>Banners</span>
+                </a>
+            </li>
+            <li>
+                <a href="personal-data.html">
+                    <i class="icon-personaldata"></i>
+                    <span>Personal data</span>
+                </a>
+            </li>
+            <li>
+                <a href="payout.html">
+                    <i class="icon-payout"></i>
+                    <span>Payout</span>
+                </a>
+            </li>
+            <li>
+                <a href="postback.html">
+                    <i class="icon-postback"></i>
+                    <span>Postback</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--your manager-->
+    <div class="your-manager">
+        <div class="mngr-title">
+            <span>Your manager</span>
+        </div>
+        <div class="manager-info flex-container align-center">
+            <div class="mngr-photo">
+                <a href=""><img src="img/manager-photo.png" alt=""></a>
+                <div class="online"></div>
+            </div>
+            <div class="mngr-name">
+                <a href="">
+                    <span>Mikhael E.</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--Aside end-->
+<main id="main">
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-header">
+                <span class="page-title">New postback</span>
+            </div>
+            <!--card title end-->
+
+            <div class="card-body">
+                <form class="postback card-form">
+                    <div class="general-parameters bd-bottom">
+
+                        <p>You can insert some parameters in this postback:</p>
+                        <div class="textarea-group-wrap flex-container">
+                            <div class="textarea-group">
+                                <label class="section-title" for="signup">Signup</label>
+                                <textarea class="default" name="" id="signup"
+                                          placeholder="crm_userId = %user_id%&#10;subid = %p%"></textarea>
+                            </div>
+                            <div class="textarea-group">
+                                <label class="section-title" for="signup">Deposit</label>
+                                <textarea class="default" name="" id="deposit"
+                                          placeholder="crm_userId = %user_id%&#10;subid = %p%"></textarea>
+                            </div>
+                        </div>
+                        <div class="select-group flex-container align-center">
+                            <div class="input-group">
+                                <label for="postback-type" class="section-title">Postback type</label>
+                                <select name="" id="postback-type" class="default">
+                                    <option value="" disabled selected>S2S(http://..)</option>
+                                    <option value="">Apple</option>
+                                    <option value="">AlphaBeth</option>
+                                    <option value="">Amazon</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="" class="section-title">To countries</label>
+                                <select name="" id="compain" class="default">
+                                    <option value="" disabled selected>Select countries</option>
+                                    <option value="">Apple</option>
+                                    <option value="">AlphaBeth</option>
+                                    <option value="">Amazon</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="sending-options" class="section-title">Sending options</label>
+                                <select name="" id="sending-options" class="default">
+                                    <option value="" disabled selected>Choose compain</option>
+                                    <option value="">Select</option>
+                                    <option value="">AlphaBeth</option>
+                                    <option value="">Amazon</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-inner-checkbox scroll-n-range bd-bottom">
+                        <div class="checkbox-wrap">
+                            <div class="section-title">
+                                <span class="warning-text">Not</span>
+                                <span>send statuses</span>
+                            </div>
+                            <div class="checkboxes flex-container scrollbar-inner">
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link1" id="link1">
+                                    <label for="link1">Landing page Money</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link2" id="link2">
+                                    <label for="link2">Mobile app</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link3" id="link3">
+                                    <label for="link3">Your second site</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link4" id="link4">
+                                    <label for="link4">LP your choice</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link5" id="link5">
+                                    <label for="link5">LP Senator free signals</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link6" id="link6">
+                                    <label for="link6">Your second LP</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link7" id="link7">
+                                    <label for="link7">LP Wallet</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link8" id="link8">
+                                    <label for="link2">LP DE Your choise</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link9" id="link9">
+                                    <label for="link9">Landing page Money</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link10" id="link10">
+                                    <label for="link10">E-Shop 01</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link11" id="link11">
+                                    <label for="link11">Invest wisely</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link12" id="link12">
+                                    <label for="link12">LP Your choice</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link13" id="link13">
+                                    <label for="link13">Toy Store</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link14" id="link14">
+                                    <label for="link14">Toy Store LP Sign up page</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                                <div class="checkbox-group flex-container align-center">
+                                    <input type="checkbox" name="link15" id="link15">
+                                    <label for="link15">Book Store</label>
+                                    <a href="" class="ref ml-auto"><i class="icon-show"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="range-wrap">
+                            <div class="section-title">
+                                <span>Send after:</span>
+                            </div>
+                            <div id="slider">
+                                <div id="custom-handle" class="ui-slider-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-row text-right">
+                        <button class="btn btn-action" type="submit">Create Pixel</button>
+                    </div>
+                </form>
+
+                <!--card body end-->
+            </div>
+        </div>
+        <!--card end-->
+    </div>
+</main>
+<!--Header end-->
+
+<!--loader start-->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div id="object"></div>
+        </div>
+    </div>
+</div>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/jquery.bpopup.min.js"></script>
+<script src="js/jquery.formstyler.min.js"></script>
+<script src="js/jquery.scrollbar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/plugins.min.js"></script>
+
+</body>
+</html>

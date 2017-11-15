@@ -369,6 +369,9 @@
     border-bottom: 1px solid $lightGrey;
     padding: 18px;
   }
+  .card-body {
+    position: relative;
+  }
   .card-date{
     padding: 30px 0;
     border-bottom: 1px solid $lightGrey;
@@ -634,17 +637,36 @@ input[type="checkbox"]{
 
 
 //links{
-.links{
+.links, .banners{
   .btn-row{
     padding: 25px 0;
+    @media (max-width: 599px){
+      padding:18px;
+      .btn{
+        width: 100%;
+      }
+    }
+  }
+  .table-wrap{
+    padding-bottom: 0;
+    .links-table, .banners-table{
+      padding: 0 20px;
+    }
   }
 }
 
 
 //table
-.payout{
-  padding: 25px 20px;
+.table-wrap{
+  padding-bottom: 70px;
+  .payout, .details, .links-table, .banners-table{
+    padding: 25px 20px 20px;
+    @media (max-width: 1371px) {
+      overflow: scroll;
+    }
+  }
 }
+
 
 .table{
 
@@ -653,9 +675,13 @@ input[type="checkbox"]{
 
   thead{
     tr{
+      white-space: nowrap;
       th{
         padding: 15px 8px;
         text-align: left;
+        @media (max-width: 599px){
+          padding: 10px 3px;
+        }
         span{
           color: #a6a6a6;
           display: inline-block;
@@ -685,6 +711,7 @@ input[type="checkbox"]{
   }
   tbody{
     tr{
+      white-space: nowrap;
       transition: all .2s linear;
       &:hover{
         background-color: $xsLightGrey;
@@ -707,6 +734,10 @@ input[type="checkbox"]{
     padding: 18px;
     border-top:1px solid $lightGrey;
 
+
+    @media (max-width: 599px){
+      padding: 12px;
+    }
     .ref{
       font-size: 16px;
     }
@@ -730,7 +761,11 @@ input[type="checkbox"]{
 
 //pagination
 .pagination{
-  margin-top: 25px;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  min-width: 445px;
+  transform: translateX(-50%);
   ul{
     width: 100%;
     li{
@@ -760,6 +795,38 @@ input[type="checkbox"]{
         }
         &:hover{
           color: $orange;
+        }
+      }
+    }
+  }
+  @media (max-width: 599px) {
+    min-width: 390px;
+    ul{
+      li{
+        font-size: 14px;
+        a{
+          padding: 9px 13px;
+        }
+        &.pagination-control{
+          a{
+            padding: 9px 12px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 479px) {
+    min-width: 237px;
+    ul{
+      li{
+        font-size: 12px;
+        a{
+          padding: 7px 11px;
+        }
+        &.pagination-control{
+          a{
+            padding: 7px 10px;
+          }
         }
       }
     }
@@ -916,6 +983,7 @@ input[type="checkbox"]{
   .statistic{
     display: inline-block;
     max-width: 690px;
+    width: 100%;
     .statistic-string-wrap{
       .statistic-string{
         padding: 10px 0;
@@ -929,11 +997,15 @@ input[type="checkbox"]{
 
     }
     .canvas-wrap{
-       margin-top: 75px;
-       padding: 10px;
+        margin-top: 75px;
+        padding: 10px;
+        overflow: scroll;
+        width:100%;
 
        canvas#myChart.chartjs-render-monitor{
          width: 100% !important;
+         min-width: 313px !important;
+         min-height: 163px !important;
        }
        .section-title{
          text-align: left;
@@ -1033,5 +1105,11 @@ input[type="checkbox"]{
   }
   .btn-row{
     padding: 20px 25px;
+    @media (max-width: 599px){
+      padding: 20px 18px;
+      .btn{
+        width: 100%;
+      }
+    }
   }
 }

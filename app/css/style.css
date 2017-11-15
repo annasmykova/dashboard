@@ -267,6 +267,12 @@ button {
   border-bottom: 1px solid #e3e3e3;
 }
 
+@media (max-width: 479px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
 .jq-checkbox,
 .jq-radio {
   position: relative;
@@ -2263,6 +2269,10 @@ input[type='submit'].styler[disabled] {
   padding: 18px;
 }
 
+.card .card-body {
+  position: relative;
+}
+
 .card .card-date {
   padding: 30px 0;
   border-bottom: 1px solid #e3e3e3;
@@ -2606,12 +2616,39 @@ input[type="checkbox"]:checked + label::before {
   opacity: 1;
 }
 
-.links .btn-row {
+.links .btn-row, .banners .btn-row {
   padding: 25px 0;
 }
 
-.payout {
-  padding: 25px 20px;
+@media (max-width: 599px) {
+  .links .btn-row, .banners .btn-row {
+    padding: 18px;
+  }
+  .links .btn-row .btn, .banners .btn-row .btn {
+    width: 100%;
+  }
+}
+
+.links .table-wrap, .banners .table-wrap {
+  padding-bottom: 0;
+}
+
+.links .table-wrap .links-table, .links .table-wrap .banners-table, .banners .table-wrap .links-table, .banners .table-wrap .banners-table {
+  padding: 0 20px;
+}
+
+.table-wrap {
+  padding-bottom: 70px;
+}
+
+.table-wrap .payout, .table-wrap .details, .table-wrap .links-table, .table-wrap .banners-table {
+  padding: 25px 20px 20px;
+}
+
+@media (max-width: 1371px) {
+  .table-wrap .payout, .table-wrap .details, .table-wrap .links-table, .table-wrap .banners-table {
+    overflow: scroll;
+  }
 }
 
 .table {
@@ -2619,9 +2656,19 @@ input[type="checkbox"]:checked + label::before {
   border-collapse: collapse;
 }
 
+.table thead tr {
+  white-space: nowrap;
+}
+
 .table thead tr th {
   padding: 15px 8px;
   text-align: left;
+}
+
+@media (max-width: 599px) {
+  .table thead tr th {
+    padding: 10px 3px;
+  }
 }
 
 .table thead tr th span {
@@ -2654,6 +2701,7 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .table tbody tr {
+  white-space: nowrap;
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
@@ -2675,6 +2723,12 @@ input[type="checkbox"]:checked + label::before {
 .table td {
   padding: 18px;
   border-top: 1px solid #e3e3e3;
+}
+
+@media (max-width: 599px) {
+  .table td {
+    padding: 12px;
+  }
 }
 
 .table td .ref {
@@ -2702,7 +2756,13 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .pagination {
-  margin-top: 25px;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  min-width: 445px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .pagination ul {
@@ -2751,6 +2811,36 @@ input[type="checkbox"]:checked + label::before {
 
 .pagination ul li.pagination-control:hover {
   color: #f58220;
+}
+
+@media (max-width: 599px) {
+  .pagination {
+    min-width: 390px;
+  }
+  .pagination ul li {
+    font-size: 14px;
+  }
+  .pagination ul li a {
+    padding: 9px 13px;
+  }
+  .pagination ul li.pagination-control a {
+    padding: 9px 12px;
+  }
+}
+
+@media (max-width: 479px) {
+  .pagination {
+    min-width: 237px;
+  }
+  .pagination ul li {
+    font-size: 12px;
+  }
+  .pagination ul li a {
+    padding: 7px 11px;
+  }
+  .pagination ul li.pagination-control a {
+    padding: 7px 10px;
+  }
 }
 
 .modal {
@@ -2918,6 +3008,7 @@ input[type="checkbox"]:checked + label::before {
 .statistic-wrap .statistic {
   display: inline-block;
   max-width: 690px;
+  width: 100%;
 }
 
 .statistic-wrap .statistic .statistic-string-wrap .statistic-string {
@@ -2940,10 +3031,14 @@ input[type="checkbox"]:checked + label::before {
 .statistic-wrap .statistic .canvas-wrap {
   margin-top: 75px;
   padding: 10px;
+  overflow: scroll;
+  width: 100%;
 }
 
 .statistic-wrap .statistic .canvas-wrap canvas#myChart.chartjs-render-monitor {
   width: 100% !important;
+  min-width: 313px !important;
+  min-height: 163px !important;
 }
 
 .statistic-wrap .statistic .canvas-wrap .section-title {
@@ -3074,6 +3169,15 @@ input[type="checkbox"]:checked + label::before {
 
 .postback .btn-row {
   padding: 20px 25px;
+}
+
+@media (max-width: 599px) {
+  .postback .btn-row {
+    padding: 20px 18px;
+  }
+  .postback .btn-row .btn {
+    width: 100%;
+  }
 }
 
 #main {

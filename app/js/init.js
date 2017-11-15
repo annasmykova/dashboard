@@ -51,7 +51,7 @@ $( function() {
 
     //chart init
     var chartBlock = document.getElementById('myChart');
-    if( chartBlock){
+    if(chartBlock){
         var myChart = new Chart(chartBlock, {
             type: 'bar',
             data: {
@@ -108,4 +108,7 @@ $( function() {
         }
 
     })
+
+
+
 } );

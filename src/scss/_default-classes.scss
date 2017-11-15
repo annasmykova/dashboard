@@ -68,3 +68,10 @@
 .bd-bottom{
   border-bottom: 1px solid $lightGrey;
 }
+
+//hidden
+.hidden-xs{
+  @media (max-width: 479px){
+    display: none;
+  }
+}

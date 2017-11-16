@@ -101,7 +101,7 @@
     align-items: center;
     color: $darkGrey;
     & > a{
-      line-height: 0;
+     // line-height: 0;
     }
 
 
@@ -160,7 +160,7 @@
       left: -1px;
       right: -1px;
       box-shadow: 0px 0px 10px;
-
+      padding: 70px 18px 24px;
 
       ul{
         li + li{
@@ -359,6 +359,9 @@
   padding: 18px;
   height: calc(100vh - 62px);
   overflow-y: auto;
+  @media (max-width: 479px){
+    padding: 14px;
+  }
 }
 
 .card{
@@ -579,17 +582,31 @@ input[type="checkbox"]{
 //checkbox-wrap
 .form-inner-checkbox{
   display: flex;
+  @media (max-width: 767px){
+    display: block;
+  }
   .checkbox-wrap {
-    flex-grow: 1;
+    width: 50%;
     .checkboxes {
       .checkbox-group, .checkbox-group:nth-child(3n) {
         flex-grow: 1;
         flex-basis: 94%;
         margin-right: 6%;
+        @media (max-width: 991px){
+          flex-basis: 90%;
+          margin-right: 10%;
+        }
       }
     }
     & + .checkbox-wrap{
       border-left: 1px solid $lightGrey;
+
+      @media (max-width: 767px){
+        border-left: none;
+      }
+    }
+    @media (max-width: 767px){
+      width: 100%;
     }
   }
 }
@@ -597,6 +614,9 @@ input[type="checkbox"]{
 .checkbox-wrap{
   flex-grow: 1;
   padding: 30px 18px 20px;
+  @media (max-width: 767px){
+    padding: 18px 10px 15px;
+  }
   .scroll-wrapper{
     margin-top: 30px;
   }
@@ -621,8 +641,6 @@ input[type="checkbox"]{
         }
       }
 
-
-
       &:hover{
         background-color: $xsLightGrey;
         .ref{
@@ -630,6 +648,13 @@ input[type="checkbox"]{
             opacity: 1;
           }
         }
+      }
+      @media (max-width: 1199px){
+        flex-basis: 47%;
+      }
+
+      @media (max-width: 991px){
+        padding: 12px 20px 12px 12px;
       }
     }
   }
@@ -881,6 +906,14 @@ input[type="checkbox"]{
                 }
               }
 
+
+              & + .input-group{
+                margin-left: 20px;
+                @media (max-width: 599px){
+                  margin-left: 0;
+                  margin-top: 15px;
+                }
+              }
               &.lang{
                 max-width: 135px;
 
@@ -907,24 +940,100 @@ input[type="checkbox"]{
                 .usa{
                     background: url('../img/lang.png') no-repeat 15px 10px;
                 }
+
               }
-              & + .input-group{
-                margin-left: 20px;
+              @media (max-width: 991px){
+                &:last-child:not(.lang){
+                width: 100%;
+                margin-left: 0;
+                margin-top: 15px;
+              }
+              @media (max-width: 891px){
+                &.lang {
+                  width: 100%;
+                  margin-left: 0;
+                  margin-top: 15px;
+                  max-width: 100%;
+                }
+              }
+              @media (max-width: 599px){
+                width: 100%;
               }
             }
+            }
+
           }
         }
       }
     }
+    @media (max-width: 991px){
+      width: 80%;
+    }
   }
+  &#links{
+    .card{
+      .card-body{
+        .card-form{
+
+          .checkbox-wrap{
+            .checkboxes{
+
+              .checkbox-group{
+                @media (max-width: 1199px){
+                  flex-basis: 47%;
+                  &:nth-child(3n){
+                    margin-right: 0;
+                  }
+                  &:nth-child(2n){
+                    margin-right: 6%;
+                  }
+                }
+                @media (max-width: 767px){
+                  flex-basis: 92%;
+                  &:nth-child(3n){
+                    margin-right: 8%;
+                  }
+                  &:nth-child(2n){
+                    margin-right: 8%;
+                  }
+                  margin-right: 8%;
+
+                }
+              }
+            }
+          }
+          }
+        }
+      }
+    }
+
 }
 .generate-links{
   padding: 20px 18px;
   input[type="text"]{
     flex-grow: 1;
+    @media (max-width: 767px){
+      width:100%;
+    }
   }
   .btn{
     margin-left: 15px;
+
+    @media (max-width: 767px){
+      width:48%;
+      margin-left: 0;
+      margin-top: 18px;
+      & + .btn {
+        margin-left: 4%;
+      }
+    }
+    @media (max-width: 599px){
+      width:100%;
+      margin-top: 18px;
+      & + .btn {
+        margin-left: 0;
+      }
+    }
     i{
       line-height: 0;
       vertical-align: middle;
@@ -1018,6 +1127,9 @@ input[type="checkbox"]{
 .postback{
   .general-parameters{
     padding: 35px 18px;
+    @media (max-width: 479px){
+      padding: 20px 18px;
+    }
     .textarea-group-wrap{
       .textarea-group{
         width: 49%;
@@ -1093,13 +1205,27 @@ input[type="checkbox"]{
   }
   .scroll-n-range{
 
+    @media (max-width: 767px){
+      .checkbox-wrap, .range-wrap{
+        width: 100%;
+      }
+    }
     .checkbox-wrap{
       width: 50%;
+      @media (max-width: 767px){
+          width: 100%;
+      }
     }
     .range-wrap{
       padding: 30px 18px 20px;
       width: 50%;
       border-left: 1px solid $lightGrey;
+
+      @media (max-width: 767px){
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid $lightGrey;
+      }
     }
 
   }
@@ -1111,5 +1237,66 @@ input[type="checkbox"]{
         width: 100%;
       }
     }
+  }
+}
+
+//range slider
+.range-slider-wrap{
+  padding: 50px 14px 80px 7px;
+  height: 100px;
+  #slider{
+    &::before{
+      content: '0';
+      position: absolute;
+      left: 0;
+      top: -10px;
+      color: $darkGrey;
+      line-height: 0;
+    }
+    &::after{
+      content: '168';
+      position: absolute;
+      right: 0;
+      top: -10px;
+      color: $darkGrey;
+      line-height: 0;
+    }
+    &.ui-widget-content{
+      border: none;
+      border-radius: 0;
+      background-color: #e3e3e3;
+    }
+    .ui-widget-header{
+      background-color: $orange;
+      border-radius: 0;
+    }
+    #custom-handle{
+      top: 0;
+      transform: translateX(-25%);
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-bottom-color: $orange;
+      border-bottom-width: 25px;
+      &, &:hover, &:focus, &:active{
+        cursor: pointer;
+        outline: none;
+        background-color: transparent;
+      }
+
+
+
+      & span{
+        white-space: nowrap;
+        position: absolute;
+        top: 40px;
+        transform: translateX(-50%);
+
+        &, &:hover, &:focus, &:active{
+          color: #191919;
+        }
+      }
+    }
+
   }
 }

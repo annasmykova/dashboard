@@ -94,17 +94,18 @@ $( function() {
     var range = $('#slider');
 
     range.slider({
-        value: 50,
+        value: 104,
         orientation: 'horizontal',
         range: 'min',
         animate: true,
-        max: 200,
+        max: 168,
         create: function(event, ui){
-            handle.append('<span class = "value">'+$( this ).slider( "value" )+'hours</span>');
+            handle.append('<span class = "value">'+$( this ).slider( "value" )+' hours</span>');
             var value = handle.find('.value');
+            range.slider('option', 'valueSpan', value);
         },
         slide: function (event, ui) {
-            range.slider("option", "valueSpan").text(ui.value + 'hours');
+            range.slider("option", "valueSpan").text(ui.value + ' hours');
         }
 
     })

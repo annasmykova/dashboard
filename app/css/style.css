@@ -1985,6 +1985,10 @@ input[type='submit'].styler[disabled] {
   color: #979797;
 }
 
+#header .user-control > a {
+  line-height: 0;
+}
+
 #header .user-control:hover {
   background-color: #f5f5f5;
 }

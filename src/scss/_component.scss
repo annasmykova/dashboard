@@ -101,15 +101,8 @@
     align-items: center;
     color: $darkGrey;
     & > a{
-     // line-height: 0;
+      line-height: 0;
     }
-
-
-    //& > *{
-    //  display: flex;
-    //  align-self: center;
-    //}
-
     &:hover{
       background-color: $xsLightGrey;
     }
@@ -208,7 +201,6 @@
       .user-auth-name{
         display: none;
       }
-
     }
   }
 }
